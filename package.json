@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xybersolve/xs-angular-action-buttons-directive.git"
+    "url": "https://github.com/gmilligan/xs-angular-action-buttons-directive.git"
   },
   "keywords": [
     "Angular",
@@ -19,9 +19,9 @@
   "author": "xybersolve - Greg Milligan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xybersolve/xs-angular-action-buttons-directive/issues"
+    "url": "https://github.com/gmilligan/xs-angular-action-buttons-directive/issues"
   },
-  "homepage": "https://github.com/xybersolve/xs-angular-action-buttons-directive",
+  "homepage": "http://assistant.milliganmedia.net/",
   "devDependencies": {
     "grunt": "^0.4.5",
     "karma": "^0.12.25",
