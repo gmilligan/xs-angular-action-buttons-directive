@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>xs-angular-action-buttons options demo</title>
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- VENDOR FILES -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+
+        <!-- Directive -->
+        <!--<script src="../src/xs-action-buttons-directive.js"></script>-->
+        <script src="../dist/xs-action-buttons-directive.min.js"></script>
+
+        <script>
+
+            angular
+               .module('app',['xs.action-buttons'])
+               // IMPORTANT! - Where are your templates kept?
+               // you can put the "xs-action-button-template.html" there. too.
+               // otherwise defaults to "./../template"
+               .value('TEMPLATE_DIR', './../template')
+               .controller('MyCtrl', MyCtrl);
+
+            MyCtrl.$inject = ['$scope']
+
+            function MyCtrl($scope){
+                $scope.buttonSizes = [
+                    {size: "xs"},
+                    {size: "sm"},
+                    {size: "md"},
+                    {size: "lg"}
+                ];
+                $scope.gotAction = function(verb) {
+                    $scope.action = verb;
+                };
+
+                $scope.hasDelete = true;
+                $scope.hasClone = true;
+                $scope.hasEdit = true;
+                $scope.hasNew = true;
+                $scope.size = "sm";
+            }
+
+        </script>
+        <style type="text/css">
+            .displayBox {
+                margin-bottom:16px;
+                border:1px solid #dddddd;
+                background-color: #ffffff;
+
+
+            }
+            .displayBox.left {
+                border-right:none;
+
+                -webkit-border-top-left-radius: 8px;
+                -moz-border-radius-topleft: 8px;
+                border-top-left-radius: 8px;
+
+                -webkit-border-bottom-left-radius: 8px;
+                -moz-border-radius-bottomleft : 8px;
+                border-bottom-left-radius: 8px ;
+            }
+
+            .displayBox.right {
+
+                -webkit-border-top-right-radius: 8px;
+                -moz-border-radius-topright: 8px;
+                border-top-right-radius: 8px;
+
+                -webkit-border-bottom-right-radius: 8px;
+                -moz-border-radius-bottomright : 8px;
+                border-bottom-right-radius: 8px ;
+            }
+
+        </style>
+    </head>
+
+    <body ng-app="app">
+
+        <div class="container" ng-controller="MyCtrl">
+            <h3 class="text-center" style="margin-top:7%;text-shadow:2px 2px 2px rgba(50,50,50, .25);color:#666;">
+                Demo: XS Action Button Options
+            </h3>
+
+            <div class="row" style="margin-top:3%;">
+
+                <div class="col-xs-offset-0 col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
+
+                    <div class="panel panel-default" >
+                        <div class="panel-heading">
+                            <h3 class="panel-title">XS Angular Action Buttons</h3>
+                        </div>
+                        <div class="panel-body" >
+                            <div class="text-center">
+                                <!-- *******************************************************
+                                XS Action Buttons Directive Markup Starts Here
+                                -->
+                                <xs-action-buttons
+                                        button-size="{{size}}"
+                                        has-delete="hasDelete"
+                                        has-clone="hasClone"
+                                        has-edit="hasEdit"
+                                        has-new="hasNew"
+                                        on-delete-confirm="gotAction('Delete')"
+                                        on-delete-cancel="gotAction('Cancel')"
+                                        on-clone="gotAction('Clone')"
+                                        on-edit="gotAction('Edit')"
+                                        on-new="gotAction('New')">
+                                </xs-action-buttons>
+                                <!--
+                                XS Action Buttons Directive Markup Ends Here
+                                ******************************************************* -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-5 col-sm-offset-3 col-sm-3 col-md-offset-3 col-md-3 col-lg-offset-4 col-lg-2 displayBox left">
+                    <h4>
+                        Options
+                    </h4>
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="hasNew">hasNew</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="hasClone">hasClone</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="hasEdit">hasEdit</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="hasDelete">hasDelete</label>
+                    </div>
+                </div>
+
+                <div class="col-xs-5 col-sm-3 col-md-3 col-lg-2 displayBox right">
+
+                    <h4>
+                        Size
+                    </h4>
+                    <div class="radio">
+                        <label><input type="radio" name="size" value="xs" ng-model="size">xs - X-Small</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="size" value="sm" ng-model="size">sm - Small</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="size" value="md" ng-model="size">md - Medium</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="size" value="lg" ng-model="size">lg - Large</label>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
+                    <h4>
+                        Feedback: Actions &amp; Attributes
+                    </h4>
+
+                    <table class="table table-responsive table-striped table-condensed table-bordered">
+                        <tr>
+                            <th width="50%" class="text-center" >
+                                Attribute
+                            </th>
+                            <th width="50%" class="text-center">
+                                Value
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right">
+                                Action:
+                            </td>
+                            <td>
+                                {{action}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right">
+                                hasNew:
+                            </td>
+                            <td>
+                                {{hasNew}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right">
+                                hasEdit:
+                            </td>
+                            <td>
+                                {{hasEdit}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right">
+                                hasClone:
+                            </td>
+                            <td>
+                                {{hasClone}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right">
+                                hasDelete:
+                            </td>
+                            <td>
+                                {{hasDelete}}
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-right">
+                                Button Size:
+                            </td>
+                            <td>
+                                {{size}}
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
