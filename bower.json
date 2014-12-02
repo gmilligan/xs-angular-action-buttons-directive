@@ -1,0 +1,33 @@
+{
+  "name": "xs-angular-action-buttons",
+  "version": "1.0.0",
+  "homepage": "https://github.com/xybersolve/xs-angular-action-buttons-directive",
+  "authors": [
+    "xybersolve <xybersolve@gmail.com>"
+  ],
+  "description": "Angular Directive, creates configurable action buttons and wires them up to a controller, includes (New, Clone, Edit, Delete). Delete has automatic confirmation mechanism.",
+  "main": "xs-action-buttons-directive.js",
+  "keywords": [
+    "Angular",
+    "Directive",
+    "Action",
+    "Buttons",
+    "Delete",
+    "Confirm"
+  ],
+  "license": "MIT",
+  "repository":{
+    "type":"git",
+    "url":"git://github.com/xybersolve/xs-angular-action-buttons-directive.git"
+
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    ".jshintrc",
+    "screenshots",
+    "test",
+    "tests"
+  ]
+}
