@@ -1,4 +1,12 @@
 module.exports = function(grunt) {  "use strict";
+
+   ['grunt-contrib-jshint',
+    'grunt-contrib-uglify',
+    'grunt-contrib-stylus',
+    'grunt-contrib-clean',
+    'grunt-open'
+   ].forEach(grunt.loadNpmTasks);
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
@@ -23,14 +31,16 @@ module.exports = function(grunt) {  "use strict";
         src: 'src/xs-action-buttons-directive.js',
         dest: 'dist/xs-action-buttons-directive.min.js'
       }
+    },
+    open: {
+      demo: {
+        path: 'demo/xs-action-buttons-options.html'
+      }
     }
 
   });
   grunt.registerTask('check', ['jshint']);
   grunt.registerTask('build', ['jshint', 'clean', 'uglify']);
-
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.registerTask('demo', ['open:demo']);
 
 };
