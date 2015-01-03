@@ -3,8 +3,4 @@
 screenshots
 about.txt
 node_modules
-test/demo-list.spec.js
-test/pages/demo-list.js
-demo/xs-action-buttons-demo.html
-demo
-test
+demo/xs-action-buttons-demo-list.html

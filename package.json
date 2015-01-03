@@ -2,9 +2,16 @@
   "name": "xs-angular-action-buttons",
   "version": "1.0.0",
   "description": "Angular Directive, creates configurable action buttons and wires them up to a controller, includes (New, Clone, Edit, Delete). Delete has automatic confirmation mechanism.",
+  "author": {
+    "name": "Greg Milligan",
+    "email": "xybersolve@gmail.com",
+    "url": "xybersolve.com"
+  },
   "main": "xs-action-buttons-directive.js",
   "scripts": {
-    "test": "protractor ./test/e2e.conf.js"
+    "test": "protractor ./test/e2e.conf.js",
+    "postinstall": "bower install",
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",
@@ -21,7 +28,11 @@
   "bugs": {
     "url": "https://github.com/gmilligan/xs-angular-action-buttons-directive/issues"
   },
+<<<<<<< HEAD
   "homepage": "http://assistant.milliganmedia.net/",
+=======
+  "homepage": "https://github.com/gmilligan/xs-angular-action-buttons-directive",
+>>>>>>> development
   "devDependencies": {
     "grunt": "^0.4.5",
     "karma": "^0.12.25",

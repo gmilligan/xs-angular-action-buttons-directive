@@ -2,12 +2,12 @@
 
   angular
     .module('xs.action-buttons',[])
-    .value('TEMPLATE_DIR', './../template') // user configurable
-    .directive('xsActionButtons',['TEMPLATE_DIR',  function(TEMPLATE_DIR) {
+    .value('XS_ACTION_BUTTONS_TEMPLATE_DIR', './../template') // user configurable
+    .directive('xsActionButtons',['XS_ACTION_BUTTONS_TEMPLATE_DIR',  function(XS_ACTION_BUTTONS_TEMPLATE_DIR) {
       return {
         restrict: 'E',
         replace: true,
-        templateUrl: TEMPLATE_DIR + '/xs-action-buttons-template.html',
+        templateUrl: XS_ACTION_BUTTONS_TEMPLATE_DIR + '/xs-action-buttons-template.html',
         scope: {
           // button sizing
           buttonSize: '@',
@@ -17,6 +17,10 @@
           hasDelete: '=',
           hasClone: '=',
           hasEdit: '=',
+
+          // delete confirmation button text
+          deleteConfirmText: '@',
+          deleteCancelText: '@',
 
           // pass through methods
           onDeleteConfirm: '&',
