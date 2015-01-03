@@ -18,6 +18,10 @@
           hasClone: '=',
           hasEdit: '=',
 
+          // delete confirmation button text
+          deleteConfirmText: '@',
+          deleteCancelText: '@',
+
           // pass through methods
           onDeleteConfirm: '&',
           onDeleteCancel: '&',
